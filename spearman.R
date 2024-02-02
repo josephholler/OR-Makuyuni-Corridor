@@ -1,7 +1,7 @@
 ### Statistical tests and summary statistics for Makuyuni Wildlife Corridor study
 library(tidyverse)
 
-# in QGIS, create a 20 meter buffer with flat end cap around transects
+# in QGIS, create a 350 meter buffer around transects
 # and then calculate zonal statistics with the least cost corridor
 # to find the minimum cost (best path) through each transect
 
