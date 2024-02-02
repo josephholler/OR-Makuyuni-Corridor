@@ -1,0 +1,2 @@
+Land Cover data may be downloaded from the original study's OSF project at https://osf.io/4qj36/
+The particular file used is landcover_tanzania/landcover.tif available at https://osf.io/download/2kg6c/

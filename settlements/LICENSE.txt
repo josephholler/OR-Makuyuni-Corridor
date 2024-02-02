@@ -1,0 +1,6 @@
+The microsoft_study_site.shp data has been licensed by Microsoft under the Open Data Commons Open Database License (ODbL).
+The data was downloaded from https://github.com/microsoft/Uganda-Tanzania-Building-Footprints.
+
+The OSM_study_site.shp, major_roads_vector.shp, and secondary_roads.shp data has been licensed by OpenStreetMap under the Open Data Commons Open Database License (ODbL).
+
+The Open Data Commons Open Database License (ODbL) is available at https://opendatacommons.org/licenses/odbl/

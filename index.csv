@@ -1,0 +1,29 @@
+File,Description
+study_site\study_region.shp,Digitized boundary of Makuyuni Wildlife Corridor used as geographic extent of the study
+study_site\bounding.box.shp,Bounding box around a buffered of the study region to use as analysis extent slightly beyond the geographic extent of the study
+study_site\end_region.shp,"Digitzed northen ""end"" region of Wildlife Corridor for least cost path analysis"
+study_site\start_region.shp,"Digitized southern ""start"" region fo Wildlife Corridor for least cost path analysis"
+study_site\transects.shp,Transects for field data collection
+roads\major_roads.shp,"Major highways derived from OpenStreetMap, distributed under Open Data Commons Open Database License (ODbL)"
+roads\secondary_roads.shp,"Secondary roads derived from OpenStreetMap,  distributed under Open Data Commons Open Database License (ODbL)"
+settlements\Bomas.shp,Maasai homesteads (Bomas) digitized by the authors
+settlements\OSM.shp,"Building footprints from OpenStreetMap, distributed under Open Data Commons Open Database License (ODbL)"
+settlements\MicrosoftAI.shp,"Building footprints from the Microsoft AI for Humanitarian Action program, distributed under Open Data Commons Open Database License (ODbL)"
+settlements\merged_buildings.shp,Merged OSM.shp and MicrosoftAI.shp
+land_cover_access.txt,Details on how to access land cover data from a public OSF.io project
+cost_surface_model.model3,"QGIS graphic model to create the least cost surface from buildings, settlements, roads, and land cover"
+cost_surface_model.pdf,PDF image output of cost_surface_model.model3
+cost_surface_model.png,PNG image ouput of cost_surface_model.model3
+cost_surface_model.py,Python script output of cost_surface_model.model3
+cost_surface.tif,"Cost surface output from cost surface model, representing difficulty of wildlife movement in each location. True cost values range from 0 to 3, while locations outside the study region have costs of 250."
+accumulated_cost_south.tif,"Accumulated cost of movement from southern ""start"" of corridor, clipped by study_region.shp"
+accumulated_cost_north.tif,"Accumulated cost of movement from northern ""end"" of corridor, clipped by study_region.shp"
+least_cost_corridor.tif,Final output of least cost wildlife corridor clipped to Makuyuni study site
+minimum_cost.csv,"Summary of minimum cost of least cost corridor by transect, created with Zonal Statistics tool in QGIS and used for validation"
+observation_data.xlsx,Tabular summary of wildlife and livestock observations and dictionary of variables and species codes
+wildlife.csv,Tabular summary of wildlife observations
+livestock.csv,Tabular summary of livestock observations
+wildlife_heatmap.tif,Kernel density of wildlife
+livestock_heatmap.tif,Kernel density of livestock
+corridors.shp,Digitized wildlife corridors based on visual interpretation and ground observation
+spearman.R,R script for spearman's rho rank correlation between wildlife observations and least cost corridor
