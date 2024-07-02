@@ -1,16 +1,29 @@
-### Statistical tests and summary statistics for Makuyuni Wildlife Corridor study
+---
+title: "Makuyuni Summary and Validation"
+author:
+  - "Joseph Holler"
+  - "Justin Lucas"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Statistical tests and summary statistics for Makuyuni Wildlife Corridor study
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
+library(readxl)
+```
 
-# in QGIS, create a 350 meter buffer around transects
-# and then calculate zonal statistics with the least cost corridor
-# to find the minimum cost (best path) through each transect
-
+```{r load-data}
 # read in minimum cost (of least cost corridor)
 transect_observations <- read.csv("minimum_cost.csv")
 
 # Read in wildlife and livestock observation data
 observation_data <- read_excel("observation_data.xlsx")
+```
 
+```{r summarize-obs-by-transect}
 # summarize the counts of wild and domestic animals by transect
 sum_obs <- observation_data %>% 
   select(Transect, Wild_Dom, Counts) %>% 
@@ -28,6 +41,32 @@ transect_observations <- transect_observations %>%
   left_join(wildlife, by="Transect") %>% 
   left_join(livestock, by="Transect")
 
+# remove temporary tables
+rm(sum_obs, wildlife, livestock)
+
+transect_observations
+```
+
+
+```{r display-transect-data}
+transect_observations
+```
+
+
+What percentage transects contained wildlife?
+
+```{r transects-with-wildlife}
+# ratio of transects with wildlife observations
+sum(!is.na(transect_observations$wildlife)) / nrow(transect_observations)
+```
+
+What percentage transects contained livestock?
+
+```{r transects-with-livestock}
+# ratio of transects with livestock observations
+sum(!is.na(transect_observations$livestock)) / nrow(transect_observations)
+```
+```{r replace-na-with-0-and-calculate-ranks}
 # fill transects with no (NA) observations with 0
 transect_observations$livestock <- replace_na(transect_observations$livestock, 0)
 transect_observations$wildlife <- replace_na(transect_observations$wildlife, 0)
@@ -36,18 +75,17 @@ transect_observations$wildlife <- replace_na(transect_observations$wildlife, 0)
 transect_observations$lsrank <- rank(-transect_observations$livestock)
 transect_observations$wirank <- rank(-transect_observations$wildlife)
 transect_observations$ranksum <- transect_observations$lsrank + transect_observations$wirank
+```
 
+
+```{r corridor-correlation}
 # Spearman's Rho correlation test, one-tailed
 # HA: There is a negative correlation between wildlife corridor cost and observation of wildlife
 corridor_test <- cor.test(transect_observations$min_corridor_cost, transect_observations$wildlife, method = "spearm", alternative = "less")
 corridor_test
+```
 
-# S = 3144, p-value = 0.003081
-# alternative hypothesis: true rho is less than 0
-# sample estimates:
-#   rho 
-# -0.5533567 
-
+```{r livestock-correlation}
 # Filter for transects with non-zero observations
 nonzero_obs <- filter(transect_observations, wildlife > 0 | livestock > 0) 
 
@@ -57,12 +95,5 @@ cor.test(nonzero_obs$livestock,
          nonzero_obs$wildlife,
          method = "spearm",
          alternative = "less")
+```
 
-# Spearman's Rho results in comment below
-
-# data:  mammals$livestock and mammals$wildlife
-# S = 1934.6, p-value = 0.1311
-# alternative hypothesis: true rho is less than 0
-# sample estimates:
-#        rho 
-# -0.2562542 

@@ -1,5 +1,6 @@
 # OR-Makuyuni-Corridor
-Data and analytical procedures for study of the viability of the Makuyuni Wildlife Corridor
+
+Data and analysis procedures for study of the viability of the Makuyuni Wildlife Corridor
 
 See [index.csv](index.csv) for a list of input data, output data, and procedures for the study.
 

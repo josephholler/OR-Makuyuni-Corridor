@@ -26,4 +26,5 @@ livestock.csv,Tabular summary of livestock observations
 wildlife_heatmap.tif,Kernel density of wildlife
 livestock_heatmap.tif,Kernel density of livestock
 corridors.shp,Digitized wildlife corridors based on visual interpretation and ground observation
-spearman.R,R script for spearman's rho rank correlation between wildlife observations and least cost corridor
+Summary_and_Validation.Rmd,R markdown script for summary statistics and spearman's rho rank correlation between wildlife observations and least cost corridor
+Summary_and_Validation.html,Webpage output of Summary_and_Validation.Rmd
