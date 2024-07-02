@@ -28,5 +28,7 @@ livestock_heatmap.tif,Kernel density of livestock
 observed_corridors.shp,Digitized wildlife corridors based on visual interpretation and ground observation
 Summary_and_Validation.Rmd,R markdown script for summary statistics and spearman's rho rank correlation between wildlife observations and least cost corridor
 Summary_and_Validation.html,Webpage output of Summary_and_Validation.Rmd
-figure3.qgz,QGIS project file with figure 3 cartographic layout
-figure4.qgz,QGIS project file with figure 4 cartographic layout
+figure_1.qgz,QGIS project file with figure 1 cartographic layout
+figure_3.qgz,QGIS project file with figure 3 cartographic layout
+figure_4.qgz,QGIS project file with figure 4 cartographic layout
+figure_5_6.qgz,QGIS project file with figure 5 and figure 6 cartographic layouts
