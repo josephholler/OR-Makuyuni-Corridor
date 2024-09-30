@@ -1,4 +1,4 @@
-﻿Sample.label,Trans_dist(km),Effort_length (km),Region.label,Study.Area,Area_km2,Species,Counts,Perp_dist(m),Latitude,Longitude
+﻿Sample.label,Trans_dist(km),Effort_length (km),Region.label,Study.Area,Area_km2,Species,Counts,Perp_dist(m),x,y
 1,1.45,3,Woodland,Makuyuni,261,CT,15,12,181011,9612803
 2,0.1,3,Woodland,Makuyuni,261,SH,344,15,176633,9610603
 3,0.013,3,Grassland,Makuyuni,261,CT,37,25,185208,9610728

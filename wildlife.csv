@@ -1,4 +1,4 @@
-Sample.label,Transect,Trans_dist(km),Effort_length (km),Region.label,Study.Area,Area_km2,Species,Counts,Perp_dist,Latitudes,Longitudes
+Sample.label,Transect,Trans_dist(km),Effort_length (km),Region.label,Study.Area,Area_km2,Species,Counts,Perp_dist,x,y
 1,2,0.1,3,Woodland,Makuyuni,261,GR,2,45,178801,9612410
 1,2,0.52,3,Woodland,Makuyuni,261,ZB,1,20,178798,9611983
 1,2,0.81,3,Woodland,Makuyuni,261,TG,3,32,179952,9612799
@@ -13,8 +13,8 @@ Sample.label,Transect,Trans_dist(km),Effort_length (km),Region.label,Study.Area,
 3,3,0.916,3,Woodland,Makuyuni,261,JK,1,35,183932,9610932
 3,3,1.636,3,Woodland,Makuyuni,261,JK,1,47,183111,9610865
 5,5,1.45,3,Semiarid,Makuyuni,261,DK,1,50,175835,9607892
-5,5,2,3,Semiarid,Makuyuni,261,IM,1,100,171733,9595644
-5,5,2,3,Semiarid,Makuyuni,261,ZB,4,30,171733,9595644
+5,21,2,3,Semiarid,Makuyuni,261,IM,1,100,171733,9595644
+5,21,2,3,Semiarid,Makuyuni,261,ZB,4,30,171733,9595644
 7,7,0.1,3,Woodland,Makuyuni,261,JK,1,100,185264,9607611
 7,7,0.4,3,Woodland,Makuyuni,261,EL,1,200,185695,9607391
 7,7,0.778,3,Woodland,Makuyuni,261,ZB,10,88,186035,9607532
