@@ -12,7 +12,7 @@
 <meta name="author" content="Joseph Holler" />
 <meta name="author" content="Justin Lucas" />
 
-<meta name="date" content="2024-07-02" />
+<meta name="date" content="2024-09-30" />
 
 <title>Makuyuni Summary and Validation</title>
 
@@ -354,7 +354,7 @@ display: none;
 <h1 class="title toc-ignore">Makuyuni Summary and Validation</h1>
 <h4 class="author">Joseph Holler</h4>
 <h4 class="author">Justin Lucas</h4>
-<h4 class="date">2024-07-02</h4>
+<h4 class="date">2024-09-30</h4>
 
 </div>
 
@@ -393,7 +393,7 @@ transect_observations</code></pre>
 ## 2         2          54.54925       10        15
 ## 3         3          54.54939        2       663
 ## 4         4          53.56789       NA        88
-## 5         5          37.07261        6         9
+## 5         5          37.07261        1         9
 ## 6         6          62.09068       NA      1178
 ## 7         7          52.42552       25        NA
 ## 8         8          37.07280        1        12
@@ -409,7 +409,7 @@ transect_observations</code></pre>
 ## 18       18          38.59003       33       137
 ## 19       19          71.11150       NA        91
 ## 20       20          63.70560       NA       292
-## 21       21          65.62828       NA        92
+## 21       21          65.62828        5        92
 ## 22       22          56.31149       NA        NA
 ## 23       23          52.91055       NA        NA</code></pre>
 <pre class="r"><code>transect_observations</code></pre>
@@ -418,7 +418,7 @@ transect_observations</code></pre>
 ## 2         2          54.54925       10        15
 ## 3         3          54.54939        2       663
 ## 4         4          53.56789       NA        88
-## 5         5          37.07261        6         9
+## 5         5          37.07261        1         9
 ## 6         6          62.09068       NA      1178
 ## 7         7          52.42552       25        NA
 ## 8         8          37.07280        1        12
@@ -434,13 +434,13 @@ transect_observations</code></pre>
 ## 18       18          38.59003       33       137
 ## 19       19          71.11150       NA        91
 ## 20       20          63.70560       NA       292
-## 21       21          65.62828       NA        92
+## 21       21          65.62828        5        92
 ## 22       22          56.31149       NA        NA
 ## 23       23          52.91055       NA        NA</code></pre>
 <p>What percentage transects contained wildlife?</p>
 <pre class="r"><code># ratio of transects with wildlife observations
 sum(!is.na(transect_observations$wildlife)) / nrow(transect_observations)</code></pre>
-<pre><code>## [1] 0.6086957</code></pre>
+<pre><code>## [1] 0.6521739</code></pre>
 <p>What percentage transects contained livestock?</p>
 <pre class="r"><code># ratio of transects with livestock observations
 sum(!is.na(transect_observations$livestock)) / nrow(transect_observations)</code></pre>
@@ -463,11 +463,11 @@ corridor_test &lt;- cor.test(transect_observations$min_corridor_cost, transect_o
 ##  Spearman&#39;s rank correlation rho
 ## 
 ## data:  transect_observations$min_corridor_cost and transect_observations$wildlife
-## S = 3144, p-value = 0.003081
+## S = 2932.5, p-value = 0.01584
 ## alternative hypothesis: true rho is less than 0
 ## sample estimates:
-##        rho 
-## -0.5533567</code></pre>
+##       rho 
+## -0.448869</code></pre>
 <pre class="r"><code># Filter for transects with non-zero observations
 nonzero_obs &lt;- filter(transect_observations, wildlife &gt; 0 | livestock &gt; 0) 
 
@@ -483,11 +483,11 @@ cor.test(nonzero_obs$livestock,
 ##  Spearman&#39;s rank correlation rho
 ## 
 ## data:  nonzero_obs$livestock and nonzero_obs$wildlife
-## S = 1934.6, p-value = 0.1311
+## S = 1907.6, p-value = 0.1487
 ## alternative hypothesis: true rho is less than 0
 ## sample estimates:
-##        rho 
-## -0.2562542</code></pre>
+##       rho 
+## -0.238717</code></pre>
 </div>
 
 
